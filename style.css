@@ -1,17 +1,18 @@
 body {
   margin:0; padding:0;
-  background:#121212; color:#eee;
+  background-image: url('bg.jpg');
   font-family:Arial, sans-serif;
 }
 header {
   text-align:center;
   padding:2rem 1rem;
-  background:#1f1f1f;
+  backdrop-filter: blur;
+  background: #F7F7F70A;
   box-shadow:0 2px 8px rgba(0,0,0,0.5);
 }
 header h1 {
   margin:0; font-size:2rem;
-  color:#2a9d8f;
+  color:#2A9D8FC7;
   text-shadow:0 0 5px #2a9d8f;
 }
 header h2 {
@@ -28,18 +29,22 @@ header h2 {
 }
 
 .bot-card {
-  background:#1f1f1f;
+  background: #C4C4C452;
+  backdrop-filter: blur;
   border-radius:8px;
+  border: 2px solid #10C7A5;
   padding:1rem;
-  box-shadow:0 2px 10px rgba(0,0,0,0.6);
+  box-shadow:0 2px 10px rgba(21, 205, 141, 0.79);
   display:flex;
   flex-direction:column;
   justify-content:space-between;
 }
 .card-header {
+ text-align: center;
   font-size:1.2rem;
   font-weight:bold;
-  color:#fff;
+  color:#8BC8C1;
+  text-shadow: 0 0 15px #0CBBA5;
   margin-bottom:0.5rem;
 }
 .repo-link {
@@ -62,16 +67,19 @@ header h2 {
   gap: 1rem;
 }
 
-.buttons a {
-  background: linear-gradient(135deg, #2BC58A, #14497D);
+.buttons a{
+  font-family: 'Courier New', Courier, monospace;
+  background: linear-gradient(135deg, #2BC58A7D, #14497D61);
   padding:0.6rem 0.8rem;
   text-align:center;
-  color:white;
-  border-radius: 10px;
+  color: white ;
+  border: 1px solid #0CF0C1;
+  border-radius: 5px;
   font-weight:bold;
-  font-size:0.9rem;
+  font-size: 0.9rem;
   text-decoration:none;
   transition:background 0.2s;
+  box-shadow: 0 0 10px #31AE94;
 }
 .buttons a:hover {
   background:rgba(42,157,143,1);
@@ -82,20 +90,24 @@ header h2 {
   bottom:1rem; left:1rem;
   background:rgba(255,255,255,0.15);
   color:#fff;
+  border: 2px solid #08C08061;
   padding:0.6rem 1rem;
   border-radius: 20px;
   font-size:1rem;
   cursor:pointer;
-  box-shadow:0 2px 8px rgba(0,0,0,0.5);
+  box-shadow:0 0 8px rgba(0, 235, 132, 0.5);
   transition:background 0.2s, box-shadow 0.2s;
   display:flex;
   align-items:center;
   gap:0.5rem;
 }
 #musicToggle:hover {
-  box-shadow:0 4px 12px rgba(0,0,0,0.7);
+  border: 2px solid #0CF0C1;
+  box-shadow:0 0 10px #0CF078A;
 }
-h2{
-  color: #A4A6AF;
-  text-shadow: 0 0 10px #13BF57, 0 0 20px #00FF65;
+b{
+  font-family: 'Courier New', Courier, monospace;
+  text-align:center ;
+  color: #E3E3E3A6;
+  text-shadow: 0 0 5px #26BF6CA6;
 }
