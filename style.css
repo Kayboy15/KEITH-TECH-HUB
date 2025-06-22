@@ -11,47 +11,38 @@ body {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 700px;
   width: 90%;
-  padding: 20px;
+  padding: 40px;
   background: #111;
-  border-radius: 12px;
-  box-shadow: 0 0 12px #00ffcc;
+  border-radius: 16px;
+  box-shadow: 0 0 20px #00ffcc;
   text-align: center;
 }
 
 h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 30px;
+  margin-bottom: 25px;
 }
 
 input, select, textarea {
   width: 100%;
-  margin: 10px 0;
-  padding: 14px;
-  border-radius: 8px;
+  margin: 15px 0;
+  padding: 18px;
+  border-radius: 10px;
   border: none;
   background-color: #222;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 textarea {
-  height: 120px;
+  height: 160px;
+  resize: none;
 }
 
 button {
   width: 100%;
-  padding: 15px;
+  padding: 18px;
   background-color: #00bfa5;
   border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover {
-  background-color: #00a38f;
-}
