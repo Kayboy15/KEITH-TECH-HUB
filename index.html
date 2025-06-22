@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>KEITH DEPLOY</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>WhatsApp Unban Request</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>🔓 WhatsApp Unban Request</h1>
 
-  <header>
-    <h1>KEITH TECH</h1>
-  </header>
+    <form id="unbanForm">
+      <select id="reason" required>
+        <option value="" disabled selected>🔽 Select Reason</option>
+        <option value="business">💼 Business Number</option>
+        <option value="private">🔐 Private Number</option>
+        <option value="inbox">📥 Inbox Use</option>
+      </select>
 
-  <main class="cards">
-    <section class="bot-card">
-      <div class="card-header">CYBER‑MD <a href="https://github.com/Kayboy15/CYBER-MD" target="_blank" class="repo-link"></a></div>
-      <p>Your 24/7 digital assistant, smater than ever, click below to show support to us</p>
-      <div class="buttons">
-<a href="https://github.com/Kayboy15/CYBER-MD/fork" target="_blank">FORK REPOSITORY</a>
-        <a href="https://render.com" target="_blank">DEPLOY ON RENDER</a>
-        <a href="https://railway.com" target="_blank">DEPLOY ON RAILWAY</a>
-        <a href="https://koyeb.app" target="_blank">DEPLOY ON KOYEB</a>
-  <b>© KEITH-CODES</b>
+      <input type="text" id="number" placeholder="📱 Your WhatsApp Number (e.g. +263...)" required>
 
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mp3">
-  </audio>
+      <textarea id="message" readonly placeholder="✉️ Your generated unban message will appear here..."></textarea>
 
-  <div id="musicToggle">🔊Music</div>
+      <button type="submit">📩 Send Unban Request</button>
+    </form>
+  </div>
 
   <script>
-    const music = document.getElementById('bgMusic');
-    const toggle = document.getElementById('musicToggle');
-    let playing = false;
-    toggle.onclick = () => {
-      playing ? music.pause() : music.play();
-      playing = !playing;
-      toggle.style.background = playing ? '#2a9d8f' : 'rgba(255,255,255,0.15)';
-    }
-  </script>
+    const reasonSelect = document.getElementById('reason');
+    const messageBox = document.getElementById('message');
+    const form = document.getElementById('unbanForm');
 
+    const templates = {
+      business: "Hello WhatsApp Team,\n\nMy number is used for business purposes and I believe it was banned by mistake. Kindly review and unban my number my business projects are in there.\n\nThank you.",
+      private: "Hello WhatsApp Team,\n\nMy number is for private use only and I have not violated any terms. Please assist in unbanning it.\n\nThank you.",
+      inbox: "Hello WhatsApp Team,\n\nI only use my number for inbox communication. Please review and lift the ban if possible.\n\nThank you."
+    };
+
+    reasonSelect.addEventListener('change', () => {
+      const selected = reasonSelect.value;
+      messageBox.value = templates[selected] || "";
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const number = document.getElementById('number').value;
+      const reason = reasonSelect.value;
+      const message = templates[reason];
+
+      const email = `mailto:support@whatsapp.com?subject=Unban Request for ${number}&body=Number: ${number}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+      window.location.href = email;
+    });
+  </script>
 </body>
 </html>
